@@ -7,6 +7,7 @@ factors<-read.csv("phyllo_factors.csv",header=T)[-c(1,2, 9:12),]
 rownames(factors)<-factors$city<-NULL
 
 #Trimmed mean function (from the edgeR paper)
+#Function borrowed from the Two_Stage Package.R file
 TMMNorm = function(X, Y, TMM.option){
   require(edgeR)
   factors = calcNormFactors(X,method="TMM") #Calculate normaization factors
